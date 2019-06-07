@@ -87,5 +87,5 @@ function releasePokemon(ev) {
   .then(json => {
     pokemonLi.remove()
   })
-
+ 
 }

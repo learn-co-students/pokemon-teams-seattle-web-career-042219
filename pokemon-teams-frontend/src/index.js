@@ -43,7 +43,8 @@ function showTrainer(trainer) {
     })`;
 
     let removeButton = document.createElement("button");
-    removeButton.setAttribute("id", `remove-pokemon-${trainer.id}`);
+    // removeButton.setAttribute("id", `remove-pokemon-${trainer.id}`);
+    removeButton.setAttribute("id", `remove-pokemon-${trainer.pokemons[i].id}`);
     removeButton.setAttribute("class", "release");
     removeButton.setAttribute("data-pokemon-id", `${trainer.pokemons[i].id}`);
     removeButton.innerText = "Release";
@@ -70,8 +71,8 @@ function showTrainer(trainer) {
 }
 
 function addPokemon(trainer) {
-  if (trainer.pokemons.length < 6) {
-    // let trainerId = trainer.pokemons[0].trainer_id;
+  let ul = document.getElementById(`ul-trainer-${trainer.id}`);
+  if (ul.children.length < 6) {
     fetch(POKEMONS_URL, {
       method: "POST",
       headers: {

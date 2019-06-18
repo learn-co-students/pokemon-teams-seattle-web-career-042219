@@ -95,9 +95,9 @@ function appendPokemon(res, trainerId) {
   li.innerText = `${res.nickname} (${res.species})`;
 
   let removeButton = document.createElement("button");
-  removeButton.setAttribute("id", trainerId);
+  removeButton.setAttribute("id", `remove-pokemon-${trainerId}`);
   removeButton.setAttribute("class", "release");
-  removeButton.setAttribute("data-pokemon-id", `${trainerId}`);
+  removeButton.setAttribute("data-pokemon-id", `${res.id}`);
   removeButton.innerText = "Release";
   li.appendChild(removeButton);
   ul.appendChild(li);

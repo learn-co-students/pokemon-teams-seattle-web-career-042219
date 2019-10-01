@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function getTrainers() {
   fetch(TRAINERS_URL)
     .then(res => res.json())
-    // .then(trainers => console.log(trainers))
     .then(trainers => showTrainers(trainers))
-
     .catch(err => console.log(err));
 }
 
@@ -38,9 +36,7 @@ function showTrainer(trainer) {
 
   for (let i = 0; i < trainer.pokemons.length; i++) {
     let li = document.createElement("li");
-    li.innerText = `${trainer.pokemons[i].nickname} (${
-      trainer.pokemons[i].species
-    })`;
+    li.innerText = `${trainer.pokemons[i].nickname} (${trainer.pokemons[i].species})`;
 
     let removeButton = document.createElement("button");
     // removeButton.setAttribute("id", `remove-pokemon-${trainer.id}`);
